@@ -8,3 +8,13 @@ output:
   bookdown::pdf_book: default
 ---
 
+# Preamble
+
+```{r frontpiece-plot, fig.height=5, fig.width=5, echo = FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+
+ggplot(diamonds, aes(x = carat, y = price, colour = color)) +
+  geom_point() +
+  theme(axis.text.x = element_text(angle = 90))
+```
+
