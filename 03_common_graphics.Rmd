@@ -55,7 +55,7 @@ ggplot(mpg, aes(x = forcats::fct_reorder(manufacturer, manufacturer, length))) +
 
 Dot charts are also used to display numerical values for a set of categories. They work well when we wish to truncate an axis and not include zero. We'll show you what we mean by that. First we'll summarise the `mpg` data to make a small dataset that has the mean highway mpg (miles per gallon of fuel) for each manufacturer. You can run the following code to make this dataset (don't follow if you don't understand it - we cover that elsewhere)...
 
-```{r}
+```{r cg_mpg_dotchart_01}
 mean_mpg <- mpg %>% 
   group_by(manufacturer) %>% 
   summarise(mean_hwy_mpg = mean(hwy)) %>% 
@@ -64,7 +64,7 @@ mean_mpg <- mpg %>%
 
 Now we'll plot a dot chart for this data. We'll put the mnaufacture on the `x` axis and mean mpg o the `y` axis using a `geom_point`. We'll also use the `theme` function to rotate the `x` axis labels - like we did for the barchart
 
-```{r}
+```{r cg_mpg_dotchart_02}
 ggplot(mean_mpg, aes(x = manufacturer, y = mean_hwy_mpg)) +
   geom_point() +
   theme(axis.text.x = element_text(angle = 90))
@@ -72,7 +72,7 @@ ggplot(mean_mpg, aes(x = manufacturer, y = mean_hwy_mpg)) +
 
 Again it would make sense to sort the manufacturers by the result we are plotting. We'll use simialr code to the the code we used with the barchart but we'll add in `.desc = TRUE` to sort in decresaing order. Finally we'll also add some better axis labels and a title.
 
-```{r}
+```{r cg_mpg_dotchart_03}
 ggplot(mean_mpg, aes(x = forcats::fct_reorder(manufacturer,
                                               mean_hwy_mpg,
                                               .desc = TRUE),
@@ -85,14 +85,40 @@ ggplot(mean_mpg, aes(x = forcats::fct_reorder(manufacturer,
        subtitle = "in decreasing order")
 ```
 
-You'll see that  ggplot has automatically truncated the axis to give the clearest comaprison. This is fine with a dot chart. If we included zero we'd lose detail in the data. Here we'll use `last_plot()` as a shortcut to take our last plot and modify it. Adding `ylim(c(0, 40))` fixes the limits of the `y` axis from 0 to 40!
+You'll see that  ggplot has automatically truncated the axis to give the clearest comaprison. This is fine with a dot chart. If we included zero we'd lose detail in the data. Here we'll use `last_plot()` as a shortcut to take our last plot and modify it. Adding `ylim(c(0, 40))` fixes the limits of the `y` axis from 0 to 40. It's not as easy to see the difference between the mean fuel efficiencies of the different manufactuers.
 
-```{r}
+```{r cg_mpg_dotchart_04}
 last_plot() +
   ylim(c(0, 40))
 ```
 
 ## Histogram
+
+Histograms show a summary of the distribution of a numerical value. In this example we'll use the `diamonds` dataset that's built in to `ggplot` and should be already loaded if you've typed `library(tidyverse)`. First lets look at the dataset...
+
+```{r cg_diamonds}
+print(diamonds, width = Inf)
+```
+
+The `price` column records the diamond's price in dollars. Let's plot a basic histogram by mapping the `x` aesthetic to the `price` column and adding `geom_histigram`...
+
+```{r cg_diamonds_histogram_01, message=FALSE}
+ggplot(diamonds, aes(x = price)) +
+  geom_histogram()
+```
+
+```{r cg_diamonds_histogram_02}
+ggplot(diamonds, aes(x = price)) +
+  geom_histogram(binwidth = 2000)
+```
+
+```{r cg_diamonds_histogram_03}
+ggplot(diamonds, aes(x = price)) +
+  geom_histogram(binwidth = 200)
+```
+
+
+
 
 
 ## Frequency polygram
