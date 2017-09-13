@@ -1,16 +1,16 @@
 # Common Graphics {#common_graphics}
 
-In this section we will show the R code used to generate some common statistical graphics. The graphics will be based on built-in R datasets so you can test them easily and then change the dataset and variables (column headings) parts of the code to easily plot your own data.
+In this section we will show the R code used to generate some common statistical graphics. The graphics will be based on built-in R datasets so you can test them easily and then change the dataset and variable (column headings) parts of the code to easily plot your own data.
 
 ## Barchart
 
 Barcharts are sometime sused to plot numerical data, including counts,  for a set of categories. For our first example we'll use the `mpg` dataset. This is available once you have loaded in the `ggplot` or `tidyverse` package. Do that now...
 
 ```{r cg_setup}
-library(tidyverse) # NB This loads in ggplot aswell as other packages
+library(tidyverse) # NB This loads in ggplot as well as other packages
 ```
 
-The `mpg` dataset lists `r nrow(mpg)` cars and includes data on their manufacturer and fuel efficiency. We can look at the top of the dataset with these commands...
+The `mpg` dataset lists `r nrow(mpg)` cars and includes data on their manufacturer and fuel efficiency. We can look at the top of the dataset with this...
 
 ```{r cg_mpg}
 print(mpg, width = Inf)
