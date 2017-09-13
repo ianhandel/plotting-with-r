@@ -11,14 +11,14 @@ output:
 
 # Preamble
 
-```{r index_setup}
+```{r index_setup, echo = FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
 
 knitr::opts_chunk$set(fig.height = 3, fig.width = 4)
 ```
 
 
-```{r frontpiece-plot, fig.height=5, fig.width=5, echo = FALSE, warning=FALSE, message=FALSE}
+```{r frontpiece-plot, fig.height=5, fig.width=5, echo = FALSE}
 ggplot(diamonds, aes(x = carat, y = price, colour = color)) +
   geom_point() +
   theme(axis.text.x = element_text(angle = 90))
