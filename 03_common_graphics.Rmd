@@ -85,18 +85,16 @@ ggplot(mean_mpg, aes(x = forcats::fct_reorder(manufacturer,
        subtitle = "in decreasing order")
 ```
 
-You'll see that  ggplot has automatically truncated the axis to give the clearest comaprison. This is fine with a dotplot. If we included zero we'd lose detail in the data. Here we'll use `last_plot()` as a shortcut to take our last plot and modify it. Adding `ylim(c(0, 40))` fixes the limits of the `y` axis from 0 to 40!
+You'll see that  ggplot has automatically truncated the axis to give the clearest comaprison. This is fine with a dot chart. If we included zero we'd lose detail in the data. Here we'll use `last_plot()` as a shortcut to take our last plot and modify it. Adding `ylim(c(0, 40))` fixes the limits of the `y` axis from 0 to 40!
 
 ```{r}
 last_plot() +
   ylim(c(0, 40))
 ```
 
-
-
-
-
 ## Histogram
+
+
 ## Frequency polygram
 ## Scatterplot
 ## Scatterplot with smoother
