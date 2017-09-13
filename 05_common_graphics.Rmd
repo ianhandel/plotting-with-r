@@ -4,7 +4,7 @@ In this section we will show the R code used to generate some common statistical
 
 ## Barchart
 
-Barcharts are sometime sused to plot numerical data, including counts,  for a set of categories. For our first example we'll use the `mpg` dataset. This is available once you have loaded in the `ggplot` or `tidyverse` package. Do that now...
+Barcharts are sometimes used to plot numerical data, including counts, for a set of categories. It is good practice with a barchart to show the bar from zero rather that cutting off the axis. For our first example of a barchart we'll use the `mpg` dataset. This is available once you have loaded in the `ggplot` or `tidyverse` package. Do that now...
 
 ```{r cg_setup}
 library(tidyverse) # NB This loads in ggplot as well as other packages
@@ -16,13 +16,13 @@ The `mpg` dataset lists `r nrow(mpg)` cars and includes data on their manufactur
 print(mpg, width = Inf)
 ```
 
-To plot a barchart showing the number of cars in the dataset from each manufactirer we can use the `ggplot()` function with manufacturer as the `x` aesthetic and using the `geom_bar` geom.
+To plot a barchart showing the number of cars in the dataset from each manufacturer we can use the `ggplot()` function with manufacturer as the `x` aesthetic and using the `geom_bar` geom.
 
 ```{r cg_mpg_barchart_01}
 ggplot(mpg, aes(x = manufacturer)) +
   geom_bar()
 ```
-The `geom_bar` geom is clever. If you just give it a factor (categories) as the `x` aesthetic it will default to counting each category and plotting the counts. Lets tidy up the `x` axis labels by rotating them through 90 degrees. We add a new line of code with a `theme()` function and tell it to set the angle of the `x` axis to 90 degrees...
+The `geom_bar` geom is clever. If you just give it a factor (categories) as the `x` aesthetic it will default to counting each category and plotting the counts. So each bar height shows the number of rows for that manufacturer. Lets tidy up the `x` axis labels by rotating them through 90 degrees. We add a new line of code with a `theme()` function and tell it to set the angle of the `x` axis to 90 degrees...
 
 ```{r cg_mpg_barchart_02}
 ggplot(mpg, aes(x = manufacturer)) +
@@ -30,7 +30,7 @@ ggplot(mpg, aes(x = manufacturer)) +
   theme(axis.text.x = element_text(angle = 90))
 ```
 
-The manufacturers here appear in alphabetical order. It would be interesting to sort the plot so the bars are sorted by the number of car models each manufacturer produces. We can do this by changing the factor levels of the manufacturer column (don't worry about details)...
+The manufacturers here appear in alphabetical order. It would be interesting to sort the plot so the bars are sorted by the number of car models each manufacturer produces. We can do this by changing the factor levels of the manufacturer column (don't worry about details in the code - it uses the fct_reorder function in the forcats package to sort on the number of cars)...
 
 ```{r cg_mpg_barchart_03}
 ggplot(mpg, aes(x = forcats::fct_reorder(manufacturer, manufacturer, length))) +
@@ -51,7 +51,51 @@ ggplot(mpg, aes(x = forcats::fct_reorder(manufacturer, manufacturer, length))) +
 ```
 
 
-## Dotchart
+## Dot chart
+
+Dot charts are also used to display numerical values for a set of categories. They work well when we wish to truncate an axis and not include zero. We'll show you what we mean by that. First we'll summarise the `mpg` data to make a small dataset that has the mean highway mpg (miles per gallon of fuel) for each manufacturer. You can run the following code to make this dataset (don't follow if you don't understand it - we cover that elsewhere)...
+
+```{r}
+mean_mpg <- mpg %>% 
+  group_by(manufacturer) %>% 
+  summarise(mean_hwy_mpg = mean(hwy)) %>% 
+  ungroup()
+```
+
+Now we'll plot a dot chart for this data. We'll put the mnaufacture on the `x` axis and mean mpg o the `y` axis using a `geom_point`. We'll also use the `theme` function to rotate the `x` axis labels - like we did for the barchart
+
+```{r}
+ggplot(mean_mpg, aes(x = manufacturer, y = mean_hwy_mpg)) +
+  geom_point() +
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+Again it would make sense to sort the manufacturers by the result we are plotting. We'll use simialr code to the the code we used with the barchart but we'll add in `.desc = TRUE` to sort in decresaing order. Finally we'll also add some better axis labels and a title.
+
+```{r}
+ggplot(mean_mpg, aes(x = forcats::fct_reorder(manufacturer,
+                                              mean_hwy_mpg,
+                                              .desc = TRUE),
+                                              y = mean_hwy_mpg)) +
+  geom_point() +
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(x = "Manufacturer",
+       y = "Mean highway miles per gallon",
+       title = "Highway fuel efficiency by manufacturer",
+       subtitle = "in decreasing order")
+```
+
+You'll see that  ggplot has automatically truncated the axis to give the clearest comaprison. This is fine with a dotplot. If we included zero we'd lose detail in the data. Here we'll use `last_plot()` as a shortcut to take our last plot and modify it. Adding `ylim(c(0, 40))` fixes the limits of the `y` axis from 0 to 40!
+
+```{r}
+last_plot() +
+  ylim(c(0, 40))
+```
+
+
+
+
+
 ## Histogram
 ## Frequency polygram
 ## Scatterplot
