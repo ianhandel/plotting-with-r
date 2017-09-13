@@ -9,14 +9,43 @@ output:
   
 ---
 
-# Preamble
+# Preface {#preface}
 
 ```{r index_setup, echo = FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
 
 knitr::opts_chunk$set(fig.height = 3, fig.width = 4)
 ```
+Here we'll talk about...
 
+## Learning objectives
+
+ 1. Be able to explain the purpose of statistical graphics
+ 2. Be able to list and explain the principles of good statistical graphic design
+ 3. Be able to explain the principles of 'The Grammar of Graphics'
+ 4. Be able to design, on paper, appropriate plots for simple data sets
+ 5. Be able to use the `ggplot` package to produce basic plots
+ 6. Be able to list sources of help for `ggplot`
+
+## Prerequisites
+
+In order to complete this module you'll need to have R and Rstudio (free desktop version) installed.
+
+[Download R](https://www.stats.bris.ac.uk/R/)
+
+[Download RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+You'll need to have a basic ability with R so that you are familiar with data types and data.frames. You'll need to be able to run functions and be able to give arguments to R functions. You'll need to be able to enter R code into RStudio, ideally by writing a script file. These skills are covered in [list relevant modules] modules. 
+
+## How we'll be teaching this
+
+This module will make most sense if you start at the beginning and work though to the end. Once you've done that it should be a helpful reference for making plots for your own projects. As you work though it will help to copy and paste code into either the RStudio console or, even better, to build an R script that contains the code as you work though with your own comments where appropriate.
+
+## Getting help
+
+Online help sources....
+
+Course help....
 
 ```{r frontpiece-plot, fig.height=5, fig.width=5, echo = FALSE}
 ggplot(diamonds, aes(x = carat, y = price, colour = color)) +
