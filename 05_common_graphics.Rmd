@@ -1,15 +1,16 @@
 # Common Graphics {#common_graphics}
 
-```{r cg_setup, echo=FALSE, warning=FALSE, message=FALSE}
-library(tidyverse)
-```
-
-
 In this section we will show the R code used to generate some common statistical graphics. The graphics will be based on built-in R datasets so you can test them easily and then change the dataset and variables (column headings) parts of the code to easily plot your own data.
 
 ## Barchart
 
-Barcharts are sometime sused to plot numerical data, including counts,  for a set of categories. For our first example we'll use the `mpg` dataset. This lists `nrow(mpg)` cars and includesd data on their manufacturer and fuel efficiency. We can look at the top of the dataset with these commands...
+Barcharts are sometime sused to plot numerical data, including counts,  for a set of categories. For our first example we'll use the `mpg` dataset. This is available once you have loaded in the `ggplot` or `tidyverse` package. Do that now...
+
+```{r cg_setup}
+library(tidyverse) # NB This loads in ggplot aswell as other packages
+```
+
+The `mpg` dataset lists `r nrow(mpg)` cars and includes data on their manufacturer and fuel efficiency. We can look at the top of the dataset with these commands...
 
 ```{r cg_mpg}
 print(mpg, width = Inf)
@@ -17,9 +18,36 @@ print(mpg, width = Inf)
 
 To plot a barchart showing the number of cars in the dataset from each manufactirer we can use the `ggplot()` function with manufacturer as the `x` aesthetic and using the `geom_bar` geom.
 
-```{r cg_mpg_barchart}
+```{r cg_mpg_barchart_01}
 ggplot(mpg, aes(x = manufacturer)) +
   geom_bar()
+```
+The `geom_bar` geom is clever. If you just give it a factor (categories) as the `x` aesthetic it will default to counting each category and plotting the counts. Lets tidy up the `x` axis labels by rotating them through 90 degrees. We add a new line of code with a `theme()` function and tell it to set the angle of the `x` axis to 90 degrees...
+
+```{r cg_mpg_barchart_02}
+ggplot(mpg, aes(x = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+The manufacturers here appear in alphabetical order. It would be interesting to sort the plot so the bars are sorted by the number of car models each manufacturer produces. We can do this by changing the factor levels of the manufacturer column (don't worry about details)...
+
+```{r cg_mpg_barchart_03}
+ggplot(mpg, aes(x = forcats::fct_reorder(manufacturer, manufacturer, length))) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+Finally lets tidy up the axis labels and give the plot a title...
+
+```{r cg_mpg_barchart_04}
+ggplot(mpg, aes(x = forcats::fct_reorder(manufacturer, manufacturer, length))) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(x = "Manufacturer",
+       y = "Number of car models",
+       title = "Car models by manufacturer",
+       subtitle = "(from R mpg dataset")
 ```
 
 
