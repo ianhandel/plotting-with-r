@@ -2,9 +2,13 @@
 
 Here we'll talk about...
 
-objectives/outcomes
+## Learning objectives
 
-prerequisites
+ 1. Be able to explain the purpose of statiostical graphics
+ 2. Be able to list and explain the principles of good statistical graphic design
+ 3. Be able to explain the pronciples of 'The Grammar of Graphics'
 
-how we'll teach it
+## Prerequisites
+
+## How we'll be teaching this
 
