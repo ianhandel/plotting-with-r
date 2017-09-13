@@ -1,0 +1,12 @@
+# Principles {#principles}
+
+Here we'll talk about...
+
+Why plot stuff?
+  Perhaps Anscombe & Challenger
+
+Principles of good graphics
+
+Grammar of graphics
+
+Defo need an exanple to talk through

@@ -1,6 +1,6 @@
 ---
-title: "A Book"
-author: "Frida Gomam"
+title: "Plotting data with R"
+author: "Ian Handel"
 site: bookdown::bookdown_site
 documentclass: book
 output:
@@ -8,8 +8,3 @@ output:
   bookdown::pdf_book: default
 ---
 
-# Hello World
-
-Hi.
-
-Bye.
