@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Plotting data with R</title>
+  <meta name="description" content="Plotting data with R">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Plotting data with R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Plotting data with R" />
+  
+  
+  
+
+<meta name="author" content="Ian Handel">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="principles.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#learning-objectives"><i class="fa fa-check"></i><b>1.1</b> Learning objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i><b>1.2</b> Prerequisites</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#how-well-be-teaching-this"><i class="fa fa-check"></i><b>1.3</b> How we’ll be teaching this</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#getting-help"><i class="fa fa-check"></i><b>1.4</b> Getting help</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="principles.html"><a href="principles.html"><i class="fa fa-check"></i><b>3</b> Principles</a></li>
+<li class="chapter" data-level="4" data-path="common-graphics.html"><a href="common-graphics.html"><i class="fa fa-check"></i><b>4</b> Common Graphics</a><ul>
+<li class="chapter" data-level="4.1" data-path="common-graphics.html"><a href="common-graphics.html#barchart"><i class="fa fa-check"></i><b>4.1</b> Barchart</a></li>
+<li class="chapter" data-level="4.2" data-path="common-graphics.html"><a href="common-graphics.html#dot-chart"><i class="fa fa-check"></i><b>4.2</b> Dot chart</a></li>
+<li class="chapter" data-level="4.3" data-path="common-graphics.html"><a href="common-graphics.html#histogram"><i class="fa fa-check"></i><b>4.3</b> Histogram</a></li>
+<li class="chapter" data-level="4.4" data-path="common-graphics.html"><a href="common-graphics.html#frequency-polygram"><i class="fa fa-check"></i><b>4.4</b> Frequency polygram</a></li>
+<li class="chapter" data-level="4.5" data-path="common-graphics.html"><a href="common-graphics.html#scatterplot"><i class="fa fa-check"></i><b>4.5</b> Scatterplot</a></li>
+<li class="chapter" data-level="4.6" data-path="common-graphics.html"><a href="common-graphics.html#scatterplot-with-smoother"><i class="fa fa-check"></i><b>4.6</b> Scatterplot with smoother</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Plotting data with R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="common_graphics" class="section level1">
+<h1><span class="header-section-number">4</span> Common Graphics</h1>
+<p>In this section we will show the R code used to generate some common statistical graphics. The graphics will be based on built-in R datasets so you can test them easily and then change the dataset and variable (column headings) parts of the code to easily plot your own data.</p>
+<div id="barchart" class="section level2">
+<h2><span class="header-section-number">4.1</span> Barchart</h2>
+<p>Barcharts are sometimes used to plot numerical data, including counts, for a set of categories. It is good practice with a barchart to show the bar from zero rather that cutting off the axis. For our first example of a barchart we’ll use the <code>mpg</code> dataset. This is available once you have loaded in the <code>ggplot</code> or <code>tidyverse</code> package. Do that now…</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse) <span class="co"># NB This loads in ggplot as well as other packages</span></code></pre></div>
+<p>The <code>mpg</code> dataset lists 234 cars and includes data on their manufacturer and fuel efficiency. We can look at the top of the dataset with this…</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(mpg, <span class="dt">width =</span> <span class="ot">Inf</span>)</code></pre></div>
+<pre><code>## # A tibble: 234 x 11
+##    manufacturer      model displ  year   cyl      trans   drv   cty   hwy    fl   class
+##           &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt;      &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;
+##  1         audi         a4   1.8  1999     4   auto(l5)     f    18    29     p compact
+##  2         audi         a4   1.8  1999     4 manual(m5)     f    21    29     p compact
+##  3         audi         a4   2.0  2008     4 manual(m6)     f    20    31     p compact
+##  4         audi         a4   2.0  2008     4   auto(av)     f    21    30     p compact
+##  5         audi         a4   2.8  1999     6   auto(l5)     f    16    26     p compact
+##  6         audi         a4   2.8  1999     6 manual(m5)     f    18    26     p compact
+##  7         audi         a4   3.1  2008     6   auto(av)     f    18    27     p compact
+##  8         audi a4 quattro   1.8  1999     4 manual(m5)     4    18    26     p compact
+##  9         audi a4 quattro   1.8  1999     4   auto(l5)     4    16    25     p compact
+## 10         audi a4 quattro   2.0  2008     4 manual(m6)     4    20    28     p compact
+## # ... with 224 more rows</code></pre>
+<p>To plot a barchart showing the number of cars in the dataset from each manufacturer we can use the <code>ggplot()</code> function with manufacturer as the <code>x</code> aesthetic and using the <code>geom_bar</code> geom.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(<span class="dt">x =</span> manufacturer)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>()</code></pre></div>
+<p><img src="_main_files/figure-html/cg_mpg_barchart_01-1.png" width="480" /> The <code>geom_bar</code> geom is clever. If you just give it a factor (categories) as the <code>x</code> aesthetic it will default to counting each category and plotting the counts. So each bar height shows the number of rows for that manufacturer. Lets tidy up the <code>x</code> axis labels by rotating them through 90 degrees. We add a new line of code with a <code>theme()</code> function and tell it to set the angle of the <code>x</code> axis to 90 degrees…</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(<span class="dt">x =</span> manufacturer)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>))</code></pre></div>
+<p><img src="_main_files/figure-html/cg_mpg_barchart_02-1.png" width="480" /></p>
+<p>The manufacturers here appear in alphabetical order. It would be interesting to sort the plot so the bars are sorted by the number of car models each manufacturer produces. We can do this by changing the factor levels of the manufacturer column (don’t worry about details in the code - it uses the fct_reorder function in the forcats package to sort on the number of cars)…</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(<span class="dt">x =</span> forcats<span class="op">::</span><span class="kw">fct_reorder</span>(manufacturer, manufacturer, length))) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>))</code></pre></div>
+<p><img src="_main_files/figure-html/cg_mpg_barchart_03-1.png" width="480" /></p>
+<p>Finally lets tidy up the axis labels and give the plot a title…</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(<span class="dt">x =</span> forcats<span class="op">::</span><span class="kw">fct_reorder</span>(manufacturer, manufacturer, length))) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Manufacturer&quot;</span>,
+       <span class="dt">y =</span> <span class="st">&quot;Number of car models&quot;</span>,
+       <span class="dt">title =</span> <span class="st">&quot;Car models by manufacturer&quot;</span>,
+       <span class="dt">subtitle =</span> <span class="st">&quot;(from R mpg dataset&quot;</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/cg_mpg_barchart_04-1.png" width="480" /></p>
+</div>
+<div id="dot-chart" class="section level2">
+<h2><span class="header-section-number">4.2</span> Dot chart</h2>
+<p>Dot charts are also used to display numerical values for a set of categories. They work well when we wish to truncate an axis and not include zero. We’ll show you what we mean by that. First we’ll summarise the <code>mpg</code> data to make a small dataset that has the mean highway mpg (miles per gallon of fuel) for each manufacturer. You can run the following code to make this dataset (don’t follow if you don’t understand it - we cover that elsewhere)…</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mean_mpg &lt;-<span class="st"> </span>mpg <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(manufacturer) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_hwy_mpg =</span> <span class="kw">mean</span>(hwy)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ungroup</span>()</code></pre></div>
+<p>Now we’ll plot a dot chart for this data. We’ll put the mnaufacture on the <code>x</code> axis and mean mpg o the <code>y</code> axis using a <code>geom_point</code>. We’ll also use the <code>theme</code> function to rotate the <code>x</code> axis labels - like we did for the barchart</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mean_mpg, <span class="kw">aes</span>(<span class="dt">x =</span> manufacturer, <span class="dt">y =</span> mean_hwy_mpg)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>))</code></pre></div>
+<p><img src="_main_files/figure-html/cg_mpg_dotchart_02-1.png" width="480" /></p>
+<p>Again it would make sense to sort the manufacturers by the result we are plotting. We’ll use simialr code to the the code we used with the barchart but we’ll add in <code>.desc = TRUE</code> to sort in decresaing order. Finally we’ll also add some better axis labels and a title.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mean_mpg, <span class="kw">aes</span>(<span class="dt">x =</span> forcats<span class="op">::</span><span class="kw">fct_reorder</span>(manufacturer,
+                                              mean_hwy_mpg,
+                                              <span class="dt">.desc =</span> <span class="ot">TRUE</span>),
+                                              <span class="dt">y =</span> mean_hwy_mpg)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Manufacturer&quot;</span>,
+       <span class="dt">y =</span> <span class="st">&quot;Mean highway miles per gallon&quot;</span>,
+       <span class="dt">title =</span> <span class="st">&quot;Highway fuel efficiency by manufacturer&quot;</span>,
+       <span class="dt">subtitle =</span> <span class="st">&quot;in decreasing order&quot;</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/cg_mpg_dotchart_03-1.png" width="480" /></p>
+<p>You’ll see that ggplot has automatically truncated the axis to give the clearest comaprison. This is fine with a dot chart. If we included zero we’d lose detail in the data. Here we’ll use <code>last_plot()</code> as a shortcut to take our last plot and modify it. Adding <code>ylim(c(0, 40))</code> fixes the limits of the <code>y</code> axis from 0 to 40. It’s not as easy to see the difference between the mean fuel efficiencies of the different manufactuers.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">last_plot</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylim</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">40</span>))</code></pre></div>
+<p><img src="_main_files/figure-html/cg_mpg_dotchart_04-1.png" width="480" /></p>
+</div>
+<div id="histogram" class="section level2">
+<h2><span class="header-section-number">4.3</span> Histogram</h2>
+<p>Histograms show a summary of the distribution of a numerical value. In this example we’ll use the <code>diamonds</code> dataset that’s built in to <code>ggplot</code> and should be already loaded if you’ve typed <code>library(tidyverse)</code>. First lets look at the dataset…</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(diamonds, <span class="dt">width =</span> <span class="ot">Inf</span>)</code></pre></div>
+<pre><code>## # A tibble: 53,940 x 10
+##    carat       cut color clarity depth table price     x     y     z
+##    &lt;dbl&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;ord&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1  0.23     Ideal     E     SI2  61.5    55   326  3.95  3.98  2.43
+##  2  0.21   Premium     E     SI1  59.8    61   326  3.89  3.84  2.31
+##  3  0.23      Good     E     VS1  56.9    65   327  4.05  4.07  2.31
+##  4  0.29   Premium     I     VS2  62.4    58   334  4.20  4.23  2.63
+##  5  0.31      Good     J     SI2  63.3    58   335  4.34  4.35  2.75
+##  6  0.24 Very Good     J    VVS2  62.8    57   336  3.94  3.96  2.48
+##  7  0.24 Very Good     I    VVS1  62.3    57   336  3.95  3.98  2.47
+##  8  0.26 Very Good     H     SI1  61.9    55   337  4.07  4.11  2.53
+##  9  0.22      Fair     E     VS2  65.1    61   337  3.87  3.78  2.49
+## 10  0.23 Very Good     H     VS1  59.4    61   338  4.00  4.05  2.39
+## # ... with 53,930 more rows</code></pre>
+<p>The <code>price</code> column records the diamond’s price in dollars. Let’s plot a basic histogram by mapping the <code>x</code> aesthetic to the <code>price</code> column and adding <code>geom_histigram</code>…</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> price)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>()</code></pre></div>
+<p><img src="_main_files/figure-html/cg_diamonds_histogram_01-1.png" width="480" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> price)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">2000</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/cg_diamonds_histogram_02-1.png" width="480" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> price)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">200</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/cg_diamonds_histogram_03-1.png" width="480" /></p>
+</div>
+<div id="frequency-polygram" class="section level2">
+<h2><span class="header-section-number">4.4</span> Frequency polygram</h2>
+</div>
+<div id="scatterplot" class="section level2">
+<h2><span class="header-section-number">4.5</span> Scatterplot</h2>
+</div>
+<div id="scatterplot-with-smoother" class="section level2">
+<h2><span class="header-section-number">4.6</span> Scatterplot with smoother</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="principles.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
