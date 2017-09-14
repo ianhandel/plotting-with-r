@@ -22,6 +22,8 @@ To plot a barchart showing the number of cars in the dataset from each manufactu
 ggplot(mpg, aes(x = manufacturer)) +
   geom_bar()
 ```
+
+
 The `geom_bar` geom is clever. If you just give it a factor (categories) as the `x` aesthetic it will default to counting each category and plotting the counts. So each bar height shows the number of rows for that manufacturer. Lets tidy up the `x` axis labels by rotating them through 90 degrees. We add a new line of code with a `theme()` function and tell it to set the angle of the `x` axis to 90 degrees...
 
 ```{r cg_mpg_barchart_02}
@@ -117,6 +119,14 @@ ggplot(diamonds, aes(x = price)) +
   geom_histogram(binwidth = 200)
 ```
 
+
+Now we have a resonable looking overall histogram we can dig deeper and look at the distribution of prioces within different groups of diamonds. The  `clarity` column in the `diamonds` dataset contains a code for, you guessed it, the diamond's clarity. Lets 'facet' the plot by that variable to do a histogram for each clarity class...
+
+```{r cg_diamonds_histogram_04}
+ggplot(diamonds, aes(x = price)) +
+  geom_histogram(binwidth = 200) +
+  facet_wrap(~ clarity)
+```
 
 
 
