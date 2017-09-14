@@ -157,7 +157,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>To plot a barchart showing the number of cars in the dataset from each manufacturer we can use the <code>ggplot()</code> function with manufacturer as the <code>x</code> aesthetic and using the <code>geom_bar</code> geom.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(<span class="dt">x =</span> manufacturer)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_bar</span>()</code></pre></div>
-<p><img src="_main_files/figure-html/cg_mpg_barchart_01-1.png" width="480" /> The <code>geom_bar</code> geom is clever. If you just give it a factor (categories) as the <code>x</code> aesthetic it will default to counting each category and plotting the counts. So each bar height shows the number of rows for that manufacturer. Lets tidy up the <code>x</code> axis labels by rotating them through 90 degrees. We add a new line of code with a <code>theme()</code> function and tell it to set the angle of the <code>x</code> axis to 90 degrees…</p>
+<p><img src="_main_files/figure-html/cg_mpg_barchart_01-1.png" width="480" /></p>
+<p>The <code>geom_bar</code> geom is clever. If you just give it a factor (categories) as the <code>x</code> aesthetic it will default to counting each category and plotting the counts. So each bar height shows the number of rows for that manufacturer. Lets tidy up the <code>x</code> axis labels by rotating them through 90 degrees. We add a new line of code with a <code>theme()</code> function and tell it to set the angle of the <code>x</code> axis to 90 degrees…</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(<span class="dt">x =</span> manufacturer)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_bar</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>))</code></pre></div>
@@ -234,6 +235,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> price)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">200</span>)</code></pre></div>
 <p><img src="_main_files/figure-html/cg_diamonds_histogram_03-1.png" width="480" /></p>
+<p>Now we have a resonable looking overall histogram we can dig deeper and look at the distribution of prioces within different groups of diamonds. The <code>clarity</code> column in the <code>diamonds</code> dataset contains a code for, you guessed it, the diamond’s clarity. Lets ‘facet’ the plot by that variable to do a histogram for each clarity class…</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> price)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">200</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>clarity)</code></pre></div>
+<p><img src="_main_files/figure-html/cg_diamonds_histogram_04-1.png" width="480" /></p>
 </div>
 <div id="frequency-polygram" class="section level2">
 <h2><span class="header-section-number">4.4</span> Frequency polygram</h2>
@@ -284,7 +290,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "subsection"
 }
