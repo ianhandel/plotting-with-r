@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="principles.html">
+<link rel="prev" href="building.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -106,13 +106,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
 <li class="chapter" data-level="3" data-path="principles.html"><a href="principles.html"><i class="fa fa-check"></i><b>3</b> Principles</a></li>
-<li class="chapter" data-level="4" data-path="common-graphics.html"><a href="common-graphics.html"><i class="fa fa-check"></i><b>4</b> Common Graphics</a><ul>
-<li class="chapter" data-level="4.1" data-path="common-graphics.html"><a href="common-graphics.html#barchart"><i class="fa fa-check"></i><b>4.1</b> Barchart</a></li>
-<li class="chapter" data-level="4.2" data-path="common-graphics.html"><a href="common-graphics.html#dot-chart"><i class="fa fa-check"></i><b>4.2</b> Dot chart</a></li>
-<li class="chapter" data-level="4.3" data-path="common-graphics.html"><a href="common-graphics.html#histogram"><i class="fa fa-check"></i><b>4.3</b> Histogram</a></li>
-<li class="chapter" data-level="4.4" data-path="common-graphics.html"><a href="common-graphics.html#frequency-polygram"><i class="fa fa-check"></i><b>4.4</b> Frequency polygram</a></li>
-<li class="chapter" data-level="4.5" data-path="common-graphics.html"><a href="common-graphics.html#scatterplot"><i class="fa fa-check"></i><b>4.5</b> Scatterplot</a></li>
-<li class="chapter" data-level="4.6" data-path="common-graphics.html"><a href="common-graphics.html#scatterplot-with-smoother"><i class="fa fa-check"></i><b>4.6</b> Scatterplot with smoother</a></li>
+<li class="chapter" data-level="4" data-path="building.html"><a href="building.html"><i class="fa fa-check"></i><b>4</b> Building a Plot</a></li>
+<li class="chapter" data-level="5" data-path="common-graphics.html"><a href="common-graphics.html"><i class="fa fa-check"></i><b>5</b> Common Graphics</a><ul>
+<li class="chapter" data-level="5.1" data-path="common-graphics.html"><a href="common-graphics.html#barchart"><i class="fa fa-check"></i><b>5.1</b> Barchart</a></li>
+<li class="chapter" data-level="5.2" data-path="common-graphics.html"><a href="common-graphics.html#dot-chart"><i class="fa fa-check"></i><b>5.2</b> Dot chart</a></li>
+<li class="chapter" data-level="5.3" data-path="common-graphics.html"><a href="common-graphics.html#histogram"><i class="fa fa-check"></i><b>5.3</b> Histogram</a></li>
+<li class="chapter" data-level="5.4" data-path="common-graphics.html"><a href="common-graphics.html#frequency-polygram"><i class="fa fa-check"></i><b>5.4</b> Frequency polygram</a></li>
+<li class="chapter" data-level="5.5" data-path="common-graphics.html"><a href="common-graphics.html#scatterplot"><i class="fa fa-check"></i><b>5.5</b> Scatterplot</a></li>
+<li class="chapter" data-level="5.6" data-path="common-graphics.html"><a href="common-graphics.html#scatterplot-with-smoother"><i class="fa fa-check"></i><b>5.6</b> Scatterplot with smoother</a></li>
 </ul></li>
 </ul>
 
@@ -132,10 +133,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="common_graphics" class="section level1">
-<h1><span class="header-section-number">4</span> Common Graphics</h1>
+<h1><span class="header-section-number">5</span> Common Graphics</h1>
 <p>In this section we will show the R code used to generate some common statistical graphics. The graphics will be based on built-in R datasets so you can test them easily and then change the dataset and variable (column headings) parts of the code to easily plot your own data.</p>
 <div id="barchart" class="section level2">
-<h2><span class="header-section-number">4.1</span> Barchart</h2>
+<h2><span class="header-section-number">5.1</span> Barchart</h2>
 <p>Barcharts are sometimes used to plot numerical data, including counts, for a set of categories. It is good practice with a barchart to show the bar from zero rather that cutting off the axis. For our first example of a barchart we’ll use the <code>mpg</code> dataset. This is available once you have loaded in the <code>ggplot</code> or <code>tidyverse</code> package. Do that now…</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse) <span class="co"># NB This loads in ggplot as well as other packages</span></code></pre></div>
 <p>The <code>mpg</code> dataset lists 234 cars and includes data on their manufacturer and fuel efficiency. We can look at the top of the dataset with this…</p>
@@ -179,7 +180,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><img src="_main_files/figure-html/cg_mpg_barchart_04-1.png" width="480" /></p>
 </div>
 <div id="dot-chart" class="section level2">
-<h2><span class="header-section-number">4.2</span> Dot chart</h2>
+<h2><span class="header-section-number">5.2</span> Dot chart</h2>
 <p>Dot charts are also used to display numerical values for a set of categories. They work well when we wish to truncate an axis and not include zero. We’ll show you what we mean by that. First we’ll summarise the <code>mpg</code> data to make a small dataset that has the mean highway mpg (miles per gallon of fuel) for each manufacturer. You can run the following code to make this dataset (don’t follow if you don’t understand it - we cover that elsewhere)…</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mean_mpg &lt;-<span class="st"> </span>mpg <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">group_by</span>(manufacturer) <span class="op">%&gt;%</span><span class="st"> </span>
@@ -208,7 +209,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><img src="_main_files/figure-html/cg_mpg_dotchart_04-1.png" width="480" /></p>
 </div>
 <div id="histogram" class="section level2">
-<h2><span class="header-section-number">4.3</span> Histogram</h2>
+<h2><span class="header-section-number">5.3</span> Histogram</h2>
 <p>Histograms show a summary of the distribution of a numerical value. In this example we’ll use the <code>diamonds</code> dataset that’s built in to <code>ggplot</code> and should be already loaded if you’ve typed <code>library(tidyverse)</code>. First lets look at the dataset…</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(diamonds, <span class="dt">width =</span> <span class="ot">Inf</span>)</code></pre></div>
 <pre><code>## # A tibble: 53,940 x 10
@@ -242,13 +243,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><img src="_main_files/figure-html/cg_diamonds_histogram_04-1.png" width="480" /></p>
 </div>
 <div id="frequency-polygram" class="section level2">
-<h2><span class="header-section-number">4.4</span> Frequency polygram</h2>
+<h2><span class="header-section-number">5.4</span> Frequency polygram</h2>
 </div>
 <div id="scatterplot" class="section level2">
-<h2><span class="header-section-number">4.5</span> Scatterplot</h2>
+<h2><span class="header-section-number">5.5</span> Scatterplot</h2>
 </div>
 <div id="scatterplot-with-smoother" class="section level2">
-<h2><span class="header-section-number">4.6</span> Scatterplot with smoother</h2>
+<h2><span class="header-section-number">5.6</span> Scatterplot with smoother</h2>
 
 </div>
 </div>
@@ -257,7 +258,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="principles.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="building.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>

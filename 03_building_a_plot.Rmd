@@ -1,12 +1,5 @@
-# Principles {#principles}
+# Building a Plot {#building}
 
 Here we'll talk about...
 
-Why plot stuff?
-  Perhaps Anscombe & Challenger
-
-Principles of good graphics
-
-Grammar of graphics
-
-Defo need an exanple to talk through
+Stella's fabulous ggplot intro!!!!!!!!
