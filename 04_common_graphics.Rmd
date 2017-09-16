@@ -131,6 +131,6 @@ ggplot(diamonds, aes(x = price)) +
 
 
 
-## Frequency polygram
+## Frequency polygon
 ## Scatterplot
 ## Scatterplot with smoother
