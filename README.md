@@ -8,3 +8,4 @@ https://www.r-bloggers.com/the-easiest-way-to-learn-ggplot2/
 
 https://github.com/jennybc/ggplot2-tutorial
 
+https://github.com/jennybc/ggplot2-tutorial/tree/master/ggplot2-tutorial-slides
