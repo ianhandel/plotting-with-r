@@ -106,12 +106,31 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
 <li class="chapter" data-level="3" data-path="principles.html"><a href="principles.html"><i class="fa fa-check"></i><b>3</b> Principles</a></li>
-<li class="chapter" data-level="4" data-path="building.html"><a href="building.html"><i class="fa fa-check"></i><b>4</b> Building a Plot</a></li>
+<li class="chapter" data-level="4" data-path="building.html"><a href="building.html"><i class="fa fa-check"></i><b>4</b> Building a Plot</a><ul>
+<li class="chapter" data-level="4.1" data-path="building.html"><a href="building.html#import-dataset"><i class="fa fa-check"></i><b>4.1</b> Import dataset</a></li>
+<li class="chapter" data-level="4.2" data-path="building.html"><a href="building.html#an-example-of-a-plot-by-ggplot"><i class="fa fa-check"></i><b>4.2</b> An example of a plot by ggplot</a></li>
+<li class="chapter" data-level="4.3" data-path="building.html"><a href="building.html#the-ggplot-grammar"><i class="fa fa-check"></i><b>4.3</b> The ggplot grammar</a></li>
+<li class="chapter" data-level="4.4" data-path="building.html"><a href="building.html#data"><i class="fa fa-check"></i><b>4.4</b> 1. DATA</a></li>
+<li class="chapter" data-level="4.5" data-path="building.html"><a href="building.html#aesthetics-mapping"><i class="fa fa-check"></i><b>4.5</b> 2. Aesthetics mapping</a></li>
+<li class="chapter" data-level="4.6" data-path="building.html"><a href="building.html#layers"><i class="fa fa-check"></i><b>4.6</b> 3. Layers</a></li>
+<li class="chapter" data-level="4.7" data-path="building.html"><a href="building.html#scales"><i class="fa fa-check"></i><b>4.7</b> 4. Scales</a></li>
+<li class="chapter" data-level="4.8" data-path="building.html"><a href="building.html#facets"><i class="fa fa-check"></i><b>4.8</b> 5. Facets</a></li>
+<li class="chapter" data-level="4.9" data-path="building.html"><a href="building.html#themes-and-other-useful-tricks"><i class="fa fa-check"></i><b>4.9</b> 6+7. Themes and other useful tricks!</a></li>
+<li class="chapter" data-level="4.10" data-path="building.html"><a href="building.html#other-plot-types"><i class="fa fa-check"></i><b>4.10</b> Other plot types</a></li>
+<li class="chapter" data-level="4.11" data-path="building.html"><a href="building.html#histograms"><i class="fa fa-check"></i><b>4.11</b> Histograms</a></li>
+<li class="chapter" data-level="4.12" data-path="building.html"><a href="building.html#boxplots"><i class="fa fa-check"></i><b>4.12</b> Boxplots</a></li>
+<li class="chapter" data-level="4.13" data-path="building.html"><a href="building.html#barcharts"><i class="fa fa-check"></i><b>4.13</b> Barcharts</a></li>
+<li class="chapter" data-level="4.14" data-path="building.html"><a href="building.html#more-info"><i class="fa fa-check"></i><b>4.14</b> More info</a></li>
+<li class="chapter" data-level="4.15" data-path="building.html"><a href="building.html#exercises"><i class="fa fa-check"></i><b>4.15</b> Exercises</a><ul>
+<li class="chapter" data-level="4.15.1" data-path="building.html"><a href="building.html#ex1."><i class="fa fa-check"></i><b>4.15.1</b> Ex1.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.16" data-path="building.html"><a href="building.html#ex2."><i class="fa fa-check"></i><b>4.16</b> Ex2.</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="common-graphics.html"><a href="common-graphics.html"><i class="fa fa-check"></i><b>5</b> Common Graphics</a><ul>
 <li class="chapter" data-level="5.1" data-path="common-graphics.html"><a href="common-graphics.html#barchart"><i class="fa fa-check"></i><b>5.1</b> Barchart</a></li>
 <li class="chapter" data-level="5.2" data-path="common-graphics.html"><a href="common-graphics.html#dot-chart"><i class="fa fa-check"></i><b>5.2</b> Dot chart</a></li>
 <li class="chapter" data-level="5.3" data-path="common-graphics.html"><a href="common-graphics.html#histogram"><i class="fa fa-check"></i><b>5.3</b> Histogram</a></li>
-<li class="chapter" data-level="5.4" data-path="common-graphics.html"><a href="common-graphics.html#frequency-polygram"><i class="fa fa-check"></i><b>5.4</b> Frequency polygram</a></li>
+<li class="chapter" data-level="5.4" data-path="common-graphics.html"><a href="common-graphics.html#frequency-polygon"><i class="fa fa-check"></i><b>5.4</b> Frequency polygon</a></li>
 <li class="chapter" data-level="5.5" data-path="common-graphics.html"><a href="common-graphics.html#scatterplot"><i class="fa fa-check"></i><b>5.5</b> Scatterplot</a></li>
 <li class="chapter" data-level="5.6" data-path="common-graphics.html"><a href="common-graphics.html#scatterplot-with-smoother"><i class="fa fa-check"></i><b>5.6</b> Scatterplot with smoother</a></li>
 </ul></li>
@@ -134,9 +153,271 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="building" class="section level1">
 <h1><span class="header-section-number">4</span> Building a Plot</h1>
-<p>Here we’ll talk about…</p>
-<p>Stella’s fabulous ggplot intro!!!!!!!!</p>
+<p>Vizualising data is extremely important both in terms of data checking and understanding, but also as a very powerful way of describing your data/results to your audience (in a presentation, your thesis, in a paper etc).</p>
+<p>One of the really exciting things about R is the amazing graphics that you can produce that are very quickly journal ready. They are infinitely superior to Excel, SAS, Stata, or Minitab. However there is a small hurdle to get over with R but this is made easier by learning the grammar of graphics and using the package ggplot2 in R.</p>
+<p>NB: There are simpler ways to plot things with R, but are much uglier so this is worth the pain!</p>
+<div id="import-dataset" class="section level2">
+<h2><span class="header-section-number">4.1</span> Import dataset</h2>
+<p>So first of all you need to install the package and then run the library function to then run it in the current environment and start using its functions.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&quot;ggplot2&quot;)</span>
+<span class="kw">library</span>(ggplot2)</code></pre></div>
+<p>Lets import a dataset and see what we can do with it in ggplot. The “NBA.csv” dataset (<a href="http://www.stat.ufl.edu/~winner/datasets.html" class="uri">http://www.stat.ufl.edu/~winner/datasets.html</a>) contains the height, weight, age of NBA players and their positions. As we have done already have a look at the data frame and check how large it is and summarise it.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nba &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/NBA.csv&quot;</span>)</code></pre></div>
+</div>
+<div id="an-example-of-a-plot-by-ggplot" class="section level2">
+<h2><span class="header-section-number">4.2</span> An example of a plot by ggplot</h2>
+<p>Now lets visualize the relationship between the Weight and Height of NBA players according to their position.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="480" /></p>
+<p>The code for this plot is the following!!</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(nba, <span class="kw">aes</span>(<span class="dt">x =</span> Weight, <span class="dt">y =</span> Height, <span class="dt">colour =</span> Pos)) <span class="op">+</span>
+<span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="kw">stat_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="kw">scale_colour_brewer</span>(<span class="dt">palette=</span><span class="st">&quot;Dark2&quot;</span>, 
+                    <span class="dt">name  =</span><span class="st">&quot;Player </span><span class="ch">\n</span><span class="st">Position&quot;</span>,
+                    <span class="dt">breaks=</span><span class="kw">c</span>(<span class="st">&quot;C&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;G&quot;</span>),
+                    <span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;Center&quot;</span>, <span class="st">&quot;Forward&quot;</span>, <span class="st">&quot;Guard&quot;</span>)) <span class="op">+</span>
+<span class="kw">facet_grid</span>(. <span class="op">~</span><span class="st"> </span>Pos) <span class="op">+</span>
+<span class="kw">ggtitle</span>(<span class="st">&quot;Scatterplot of weight and height of </span><span class="ch">\n</span><span class="st"> nba players by position&quot;</span>) <span class="op">+</span>
+<span class="kw">xlab</span>(<span class="st">&quot;Weight (kg)&quot;</span>) <span class="op">+</span>
+<span class="kw">ylab</span>(<span class="st">&quot;Height (cm)&quot;</span>) <span class="op">+</span>
+<span class="kw">theme</span>(<span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="dv">14</span>, <span class="dt">face =</span> <span class="st">&quot;bold.italic&quot;</span>),
+<span class="dt">strip.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">face =</span> <span class="st">&quot;bold.italic&quot;</span>, <span class="dt">size =</span> <span class="dv">12</span>),
+<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="dv">14</span>, <span class="dt">face =</span> <span class="st">&quot;bold.italic&quot;</span>, <span class="dt">hjust =</span> <span class="fl">0.5</span>),
+<span class="dt">legend.title =</span> <span class="kw">element_text</span>(<span class="dt">colour=</span><span class="st">&quot;black&quot;</span>, <span class="dt">size=</span><span class="dv">14</span>, <span class="dt">face=</span><span class="st">&quot;bold&quot;</span>),
+<span class="dt">legend.text =</span> <span class="kw">element_text</span>(<span class="dt">colour=</span><span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="dv">14</span>, <span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>) )</code></pre></div>
+</div>
+<div id="the-ggplot-grammar" class="section level2">
+<h2><span class="header-section-number">4.3</span> The ggplot grammar</h2>
+<p>It might look a bit scary, but we will now explain how to build a ggplot step by step by understanding the ggplot grammar. Basically, ggplots are composed of building blocks that are added to the plot one after the other using the <em>+</em> sign. The diagram below shows the most important building blocks. We start building a plot from the bottom!</p>
+<p><img src="lego_figs/ggplot_bricks_ALL.jpg" width="450px" style="display: block; margin: auto;" /></p>
+</div>
+<div id="data" class="section level2">
+<h2><span class="header-section-number">4.4</span> 1. DATA</h2>
+<p><img src="lego_figs/ggplot_bricks_1.jpg" width="300px" style="display: block; margin: auto;" /></p>
+<p>Anything you try to plot with ggplot needs to belong to a dataframe. The variables we want to visualize belong to the <em>NBA</em> dataset.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(nba)</code></pre></div>
+<pre><code>##   X.1 X            Player Pos Height Weight Age Age21
+## 1   1 1  Nate\xa0Robinson   G     69    180  29   &gt;21
+## 2   2 2  Isaiah\xa0Thomas   G     69    185  24   &gt;21
+## 3   3 3   Phil\xa0Pressey   G     71    175  22   &gt;21
+## 4   4 4   Shane\xa0Larkin   G     71    176  20  &lt;=21
+## 5   5 5      Ty\xa0Lawson   G     71    195  25   &gt;21
+## 6   6 6 John\xa0Lucas III   G     71    157  30   &gt;21</code></pre>
+</div>
+<div id="aesthetics-mapping" class="section level2">
+<h2><span class="header-section-number">4.5</span> 2. Aesthetics mapping</h2>
+<p><img src="lego_figs/ggplot_bricks_2.jpg" width="300px" style="display: block; margin: auto;" /></p>
+<p>Aesthetics refer to the variables we want to see. In this case weight and height! So let’s start building our plot using the <em>ggplot</em> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> nba, <span class="kw">aes</span>(<span class="dt">x =</span> Weight, <span class="dt">y =</span> Height))</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="250px" style="display: block; margin: auto;" /></p>
+</div>
+<div id="layers" class="section level2">
+<h2><span class="header-section-number">4.6</span> 3. Layers</h2>
+<p><img src="lego_figs/ggplot_bricks_3.jpg" width="300px" style="display: block; margin: auto;" /></p>
+<p>In order to see something on our plot we need to add layers. Layers include geometric elements (geoms) and statistical transformations (stats). Since we want to build a scatterplot our first layer will be a layer of points (geom_point):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> nba, <span class="kw">aes</span>(<span class="dt">x =</span> Weight, <span class="dt">y =</span> Height)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="co"># Layer 1</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="200px" style="display: block; margin: auto;" /></p>
+<p>We also want to see the statistical relationship between weight and height so we will add a regression line as our second layer.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> nba, <span class="kw">aes</span>(<span class="dt">x =</span> Weight, <span class="dt">y =</span> Height)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="co"># Layer 1</span>
+<span class="kw">stat_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>) <span class="co"># Layer 2</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="200px" style="display: block; margin: auto;" /></p>
+</div>
+<div id="scales" class="section level2">
+<h2><span class="header-section-number">4.7</span> 4. Scales</h2>
+<p><img src="lego_figs/ggplot_bricks_4.jpg" width="300px" style="display: block; margin: auto;" /></p>
+<p>As we said at the beginning we are also interested in the position of each player. As a first step we want to colour each point by the player’s position. Scales map values in the data space to values in an aesthetic space. This can be colour, size or shape. This will also automatically create a legend to explain the colours on the plot.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> nba, <span class="kw">aes</span>(<span class="dt">x =</span> Weight, <span class="dt">y =</span> Height, <span class="dt">colour =</span> Pos)) <span class="op">+</span><span class="st"> </span><span class="co"># added colour = POS</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="kw">stat_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span>
+<span class="kw">scale_colour_brewer</span>(<span class="dt">palette=</span><span class="st">&quot;Dark2&quot;</span>) <span class="co"># scale maps aes data values (x and y) to aes colour </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="250px" style="display: block; margin: auto;" /></p>
+<p>NB: You can obtain a similar plot just by adding a colour variable in the aesthetics. Scales give you the ability to have control over the colours chosen.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> nba, <span class="kw">aes</span>(<span class="dt">x =</span> Weight, <span class="dt">y =</span> Height, <span class="dt">colour =</span> Pos)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="kw">stat_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>) </code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="250px" style="display: block; margin: auto;" /></p>
+</div>
+<div id="facets" class="section level2">
+<h2><span class="header-section-number">4.8</span> 5. Facets</h2>
+<p><img src="lego_figs/ggplot_bricks_5.jpg" width="300px" style="display: block; margin: auto;" /></p>
+<p>If you remember the original plot, we actually wanted to see a separate plot for each player position. Using facets we can display our data split by the chosen variable, in this case position.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> nba, <span class="kw">aes</span>(<span class="dt">x =</span> Weight, <span class="dt">y =</span> Height, <span class="dt">colour =</span> Pos)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="kw">stat_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span>
+<span class="kw">scale_colour_brewer</span>(<span class="dt">palette=</span><span class="st">&quot;Dark2&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="kw">facet_grid</span>(. <span class="op">~</span><span class="st"> </span>Pos) <span class="co"># split grid by the variable Pos</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="250px" style="display: block; margin: auto;" /></p>
+</div>
+<div id="themes-and-other-useful-tricks" class="section level2">
+<h2><span class="header-section-number">4.9</span> 6+7. Themes and other useful tricks!</h2>
+<p><img src="lego_figs/ggplot_bricks_ALL.jpg" width="300px" style="display: block; margin: auto;" /></p>
+<p>ggplot is very flexible and you can adjust pretty much every aspect of the plot to your preference. In our original plot we had added a plot title using <strong>ggtitle</strong>, changed the x and y axis labels by <strong>xlab</strong> and <strong>ylab</strong> as shown in the code below.</p>
+<p>We also changed the title and labels of our legend by adding information to <strong>scale</strong> and the facet labels by adding information to <strong>facet</strong>.</p>
+<p>Lastly, we used <em>theme</em> to change font size, colour and style of many elements of the plot. You can use theme to change pretty much everything you like on your plot.</p>
+<p>Here is the whole code again, with some useful websites to understand each building block better!</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(nba, <span class="kw">aes</span>(<span class="dt">x =</span> Weight, <span class="dt">y =</span> Height, <span class="dt">colour =</span> Pos)) <span class="op">+</span>
+<span class="co"># Visit http://docs.ggplot2.org/current/ for lists of geoms, stats etc  </span>
+<span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="kw">stat_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="co"># Visit http://docs.ggplot2.org/current/scale_brewer.html for more colour options</span>
+<span class="kw">scale_colour_brewer</span>(<span class="dt">palette=</span><span class="st">&quot;Dark2&quot;</span>, 
+                    <span class="dt">name  =</span><span class="st">&quot;Player </span><span class="ch">\n</span><span class="st">Position&quot;</span>,
+                    <span class="dt">breaks=</span><span class="kw">c</span>(<span class="st">&quot;C&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;G&quot;</span>),
+                    <span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;Centre&quot;</span>, <span class="st">&quot;Forward&quot;</span>, <span class="st">&quot;Guard&quot;</span>)) <span class="op">+</span>
+<span class="kw">facet_grid</span>(. <span class="op">~</span><span class="st"> </span>Pos, <span class="dt">labeller=</span><span class="kw">labeller</span>(<span class="dt">Pos =</span> <span class="kw">c</span>(<span class="st">&quot;C&quot;</span>=<span class="st">&quot;Centre&quot;</span>, <span class="st">&quot;F&quot;</span>=<span class="st">&quot;Forward&quot;</span>, <span class="st">&quot;G&quot;</span>=<span class="st">&quot;Guard&quot;</span>))) <span class="op">+</span>
+<span class="kw">ggtitle</span>(<span class="st">&quot;Scatterplot of weight and height of </span><span class="ch">\n</span><span class="st"> NBA players by position&quot;</span>) <span class="op">+</span>
+<span class="kw">xlab</span>(<span class="st">&quot;Weight (kg)&quot;</span>) <span class="op">+</span>
+<span class="kw">ylab</span>(<span class="st">&quot;Height (cm)&quot;</span>) <span class="op">+</span>
+<span class="co"># Visit http://docs.ggplot2.org/current/theme.html and http://www.sthda.com/english/wiki</span>
+<span class="co">#/ggplot2-themes-and-background-colors-the-3-elements for info about themes </span>
+<span class="kw">theme</span>(<span class="dt">axis.title =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="dv">14</span>, <span class="dt">face =</span> <span class="st">&quot;bold.italic&quot;</span>),
+<span class="dt">strip.text =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">face =</span> <span class="st">&quot;bold.italic&quot;</span>, <span class="dt">size =</span> <span class="dv">12</span>),
+<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="dv">14</span>, <span class="dt">face =</span> <span class="st">&quot;bold.italic&quot;</span>, <span class="dt">hjust =</span> <span class="fl">0.5</span>),
+<span class="co">#legend.position = &quot;none&quot;, # can add this line to remove legend from plot</span>
+<span class="dt">legend.title =</span> <span class="kw">element_text</span>(<span class="dt">colour=</span><span class="st">&quot;black&quot;</span>, <span class="dt">size=</span><span class="dv">14</span>, <span class="dt">face=</span><span class="st">&quot;bold&quot;</span>),
+<span class="dt">legend.text =</span> <span class="kw">element_text</span>(<span class="dt">colour=</span><span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="dv">14</span>, <span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>) )</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="450px" style="display: block; margin: auto;" /></p>
+</div>
+<div id="other-plot-types" class="section level2">
+<h2><span class="header-section-number">4.10</span> Other plot types</h2>
+<p>So far we have seen how to draw a scatter plot with ggplot. You can plot pretty much any type of plot you like and you can change that by changing the <em>geom</em> type used. There are a number of geoms and you can see these when you use Rstudio as you type. But some of the common ones are below and also in the cheat sheet provided.</p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>geom</strong></th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>geom_point</strong></td>
+<td>Points, eg. a scatterplot</td>
+</tr>
+<tr class="even">
+<td><strong>geom_line</strong></td>
+<td>lines</td>
+</tr>
+<tr class="odd">
+<td><strong>geom_ribbon</strong></td>
+<td>Ribbons, y range with continuous x</td>
+</tr>
+<tr class="even">
+<td><strong>geom_polygon</strong></td>
+<td>Polygon, a filled path</td>
+</tr>
+<tr class="odd">
+<td><strong>geom_pointrange</strong></td>
+<td>vertical line with point in the middle</td>
+</tr>
+<tr class="even">
+<td><strong>geom_path</strong></td>
+<td>connect observations in original order</td>
+</tr>
+<tr class="odd">
+<td><strong>geom_histogram</strong></td>
+<td>Histograms</td>
+</tr>
+<tr class="even">
+<td><strong>geom_text</strong></td>
+<td>Textural annotations</td>
+</tr>
+<tr class="odd">
+<td><strong>geom_violin</strong></td>
+<td>Violin plots</td>
+</tr>
+<tr class="even">
+<td><strong>geom_map</strong></td>
+<td>Polygons from map</td>
+</tr>
+</tbody>
+</table>
 
+</div>
+<div id="histograms" class="section level2">
+<h2><span class="header-section-number">4.11</span> Histograms</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data=</span>nba, <span class="kw">aes</span>(<span class="dt">x=</span>Age)) <span class="op">+</span>
+<span class="st">      </span><span class="kw">geom_histogram</span>( <span class="dt">fill=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">colour=</span><span class="st">&quot;purple&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">      </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;Histogram of the Age of NBA players&quot;</span>, <span class="dt">x=</span><span class="st">&quot;Age (years)&quot;</span>) <span class="op">+</span>
+<span class="st">      </span><span class="kw">theme_bw</span>()
+p</code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="350px" style="display: block; margin: auto;" /></p>
+
+</div>
+<div id="boxplots" class="section level2">
+<h2><span class="header-section-number">4.12</span> Boxplots</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>nba) <span class="op">+</span>
+<span class="st">      </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">y=</span>Height, <span class="dt">x=</span>Pos), <span class="dt">fill=</span><span class="st">&quot;lightgrey&quot;</span>, <span class="dt">colour=</span><span class="st">&quot;purple&quot;</span>) <span class="op">+</span>
+<span class="st">      </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;Boxplot of Height per Position&quot;</span>, <span class="dt">y=</span><span class="st">&quot;Height (cm)&quot;</span>, <span class="dt">x=</span><span class="st">&quot;Position&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="co"># Set title and axis labels</span>
+<span class="st">      </span><span class="kw">theme_bw</span>()</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="350px" style="display: block; margin: auto;" /></p>
+
+<p>One of the things about box plots though is that you loose a lot of information so you can get fancy and overlay the raw dots like this…</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>nba) <span class="op">+</span>
+<span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">y=</span>Height, <span class="dt">x=</span>Pos), <span class="dt">fill=</span><span class="st">&quot;lightgrey&quot;</span>, <span class="dt">colour=</span><span class="st">&quot;purple&quot;</span>) <span class="op">+</span>
+<span class="kw">geom_jitter</span>(<span class="kw">aes</span>(<span class="dt">y=</span>Height, <span class="dt">x=</span>Pos), <span class="dt">colour=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">size=</span><span class="fl">0.2</span>) <span class="op">+</span><span class="st"> </span><span class="co"># geom_jitter spreads points </span>
+<span class="co">#out so that they don&#39;t overlap</span>
+<span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;Boxplot of Height per Position&quot;</span>, <span class="dt">y=</span><span class="st">&quot;horse power&quot;</span>, <span class="dt">x=</span><span class="st">&quot;Number of cylinders&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="kw">theme_bw</span>()</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="350px" style="display: block; margin: auto;" /></p>
+
+</div>
+<div id="barcharts" class="section level2">
+<h2><span class="header-section-number">4.13</span> Barcharts</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>nba, <span class="kw">aes</span>(<span class="dt">x=</span>Pos, <span class="dt">fill=</span>Age21)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_bar</span>(<span class="dt">colour=</span><span class="st">&quot;black&quot;</span>, <span class="dt">stat=</span><span class="st">&quot;count&quot;</span>,
+             <span class="dt">position=</span><span class="kw">position_dodge</span>(), <span class="co"># split bars by Age21 variable. </span>
+                                        <span class="co">#try commenting this line out </span>
+             <span class="dt">size=</span>.<span class="dv">3</span>) <span class="op">+</span><span class="st">                        </span><span class="co"># Thinner lines</span>
+<span class="st">    </span><span class="kw">scale_fill_discrete</span>(<span class="dt">name=</span><span class="st">&quot;Age of player&quot;</span>) <span class="op">+</span><span class="st">      </span><span class="co"># Set legend title</span>
+<span class="st">    </span><span class="kw">xlab</span>(<span class="st">&quot;Player Position&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Number of players&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="co"># Set axis labels</span>
+<span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Barchart of player position by Age category&quot;</span>) <span class="op">+</span><span class="st">     </span><span class="co"># Set title</span>
+<span class="st">    </span><span class="kw">theme_bw</span>() <span class="co"># Set theme</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="350px" style="display: block; margin: auto;" /></p>
+<!--Just to give you some examples of the sorts of things you can do with R...
+
+You can pull in output from various models and over lay results to build up very complex figures such as this.
+
+![](fig1.png)
+
+Here we have actually displayed all the data from individual animals adding colours for disease status and then over laid a model result which would be almost impossible in another software environment...
+
+![](fig2.png)
+
+Also you can do all your spatial stats and mapping without having to export data and save lots of files and then import into a new tool...
+
+![](fig3.png)--->
+
+</div>
+<div id="more-info" class="section level2">
+<h2><span class="header-section-number">4.14</span> More info</h2>
+<ul>
+<li><p>R Cookbook Graphs <a href="http://www.cookbook-r.com/Graphs/" class="uri">http://www.cookbook-r.com/Graphs/</a></p></li>
+<li><p>Line plots tutorial <a href="http://t-redactyl.io/blog/2015/12/creating-plots-in-r-using-ggplot2-part-1-line-plots.html" class="uri">http://t-redactyl.io/blog/2015/12/creating-plots-in-r-using-ggplot2-part-1-line-plots.html</a></p></li>
+<li><p>Bar plots tutorials <a href="http://t-redactyl.io/blog/2016/01/creating-plots-in-r-using-ggplot2-part-3-bar-plots.html" class="uri">http://t-redactyl.io/blog/2016/01/creating-plots-in-r-using-ggplot2-part-3-bar-plots.html</a> <a href="http://t-redactyl.io/blog/2016/01/creating-plots-in-r-using-ggplot2-part-4-stacked-bar-plots.html" class="uri">http://t-redactyl.io/blog/2016/01/creating-plots-in-r-using-ggplot2-part-4-stacked-bar-plots.html</a></p></li>
+<li><p>Scatter plots tutorials <a href="http://t-redactyl.io/blog/2016/02/creating-plots-in-r-using-ggplot2-part-5-scatterplots.html" class="uri">http://t-redactyl.io/blog/2016/02/creating-plots-in-r-using-ggplot2-part-5-scatterplots.html</a> <a href="http://t-redactyl.io/blog/2016/02/creating-plots-in-r-using-ggplot2-part-6-weighted-scatterplots.html" class="uri">http://t-redactyl.io/blog/2016/02/creating-plots-in-r-using-ggplot2-part-6-weighted-scatterplots.html</a></p></li>
+<li><p>Histograms tutorial <a href="http://t-redactyl.io/blog/2016/02/creating-plots-in-r-using-ggplot2-part-7-histograms.html" class="uri">http://t-redactyl.io/blog/2016/02/creating-plots-in-r-using-ggplot2-part-7-histograms.html</a></p></li>
+<li><p>Boxplots tutorial <a href="http://t-redactyl.io/blog/2016/04/creating-plots-in-r-using-ggplot2-part-10-boxplots.html" class="uri">http://t-redactyl.io/blog/2016/04/creating-plots-in-r-using-ggplot2-part-10-boxplots.html</a></p></li>
+</ul>
+
+</div>
+<div id="exercises" class="section level2">
+<h2><span class="header-section-number">4.15</span> Exercises</h2>
+<div id="ex1." class="section level3">
+<h3><span class="header-section-number">4.15.1</span> Ex1.</h3>
+<p>Using dataset <em>mtcars</em> plot a box-plot of Gross horse power (<em>hp</em>) against number of cylinders (<em>cyl</em>). Give the plot the title <em>Boxplot by (Your Name)</em>. Add the real horse power values using dots coloured by Number of carburetors (<em>carb</em>) faceted by Number of forward gears (<em>gear</em>). Change the labels of gear to “3 Gears”, “4 Gears”, “5 Gears”.</p>
+<p>Hint: To find more info about an R dataset try <em>?mtcars</em>.</p>
+</div>
+</div>
+<div id="ex2." class="section level2">
+<h2><span class="header-section-number">4.16</span> Ex2.</h2>
+<p>Using the same dataset plot a stacked bar chart of number of cylinders (<em>cyl</em>) by Transmission (<em>am</em>). Change colours corresponding to <em>am</em> manually to blue for 0 and red for 1. Change the legend labels to Autumatic and Manual and the legend title to Transmission.</p>
+<p>Hint: Check the bar plots tutorial websites above for help</p>
+
+</div>
 </div>
             </section>
 
