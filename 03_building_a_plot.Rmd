@@ -74,7 +74,7 @@ knitr::include_graphics("lego_figs/ggplot_bricks_ALL.jpg")
 
 
 
-## 1. DATA
+### DATA
 ```{r, out.width = "300px", echo=FALSE, fig.align='center'}
 knitr::include_graphics("lego_figs/ggplot_bricks_1.jpg")
 ```
@@ -86,7 +86,7 @@ head(nba)
 ```
 
 
-## 2. Aesthetics mapping
+### Aesthetics mapping
 ```{r, out.width = "300px", echo=FALSE, fig.align='center'}
 knitr::include_graphics("lego_figs/ggplot_bricks_2.jpg")
 ```
@@ -98,7 +98,7 @@ ggplot(data = nba, aes(x = Weight, y = Height))
 ```
 
 
-## 3. Layers
+### Layers
 ```{r, out.width = "300px", echo=FALSE, fig.align='center'}
 knitr::include_graphics("lego_figs/ggplot_bricks_3.jpg")
 ```
@@ -119,7 +119,7 @@ stat_smooth(method = "lm", se = FALSE) # Layer 2
 ```
 
 
-## 4. Scales
+### Scales
 ```{r, out.width = "300px", echo=FALSE, fig.align='center'}
 knitr::include_graphics("lego_figs/ggplot_bricks_4.jpg")
 ```
@@ -143,7 +143,7 @@ stat_smooth(method = "lm", se = FALSE)
 ```
 
 
-## 5. Facets
+### Facets
 ```{r, out.width = "300px", echo=FALSE, fig.align='center'}
 knitr::include_graphics("lego_figs/ggplot_bricks_5.jpg")
 ```
@@ -158,7 +158,7 @@ scale_colour_brewer(palette="Dark2") +
 facet_grid(. ~ Pos) # split grid by the variable Pos
 ```
 
-## 6+7. Themes and other useful tricks!
+### Themes and other useful tricks!
 ```{r, out.width = "300px", echo=FALSE, fig.align='center'}
 knitr::include_graphics("lego_figs/ggplot_bricks_ALL.jpg")
 ```
