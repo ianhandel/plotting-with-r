@@ -2,6 +2,8 @@
 
 Course book in development
 
+Stella Mazeri & Ian Handel
+
 ## Other resources
 
 https://www.r-bloggers.com/the-easiest-way-to-learn-ggplot2/
